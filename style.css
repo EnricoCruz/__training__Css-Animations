@@ -1,0 +1,116 @@
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+}
+
+body{
+  background: linear-gradient(#7d7d7d, #989898);
+  height: calc(100vh - 60px);
+}
+.loadsRow{
+  margin: auto;
+  margin-top: 60px;
+  width: 960px;
+  display: flex;
+  height: 100px;
+}
+
+#loading-circle-linear{
+
+  border: 5px solid #c1c1c1;
+  border-top-color: #d4812b;
+  border-radius: 100%;
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+  /*top:0;
+  bottom:0;
+  left:0;
+  right:0;*/
+
+  animation: round 1.5s linear infinite;
+}
+
+@keyframes round{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
+}
+
+#loading-circle-linear-moving{
+  border: 5px solid #c1c1c1;
+  border-right-color: #d4812b;
+  border-radius: 100%;
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+
+  animation: round-moving 1.5s linear infinite;
+}
+
+@keyframes round-moving{
+  0%{transform: rotate(180deg) translateX(0px);}
+  50%{transform: rotate(-0deg) translateX(50px) translateY(5px);}
+  100%{transform: rotate(180deg) translateX(0px);}
+}
+
+#loading-circle-push{
+  border: 5px solid #c1c1c1;
+  border-radius: 100%;
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+
+  animation: circle-push 2s linear infinite;
+}
+@keyframes circle-push{
+  0%{border:5px solid #c1c1c1;}
+  50%{ border:5px solid #c1c1c1; background:#d4812b}
+  100%{border:5px solid #c1c1c1;}
+}
+
+#loading-circle-push-zoom{
+  border: 5px solid #c1c1c1;
+  border-radius: 100%;
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+
+  animation: circle-push-zoom 2s linear infinite;
+}
+@keyframes circle-push-zoom{
+  0%{width:50px; height:50px;}
+  50%{width:60px; height:60px; background:#d4812b; transform:translateY(-5px);}
+  100%{width:50px; height:50px;}
+}
+
+
+#loading-circle-jumping{
+  border: 5px solid #d4812b;
+  background: #c1c1c1;
+  border-radius: 100%;
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+
+  animation: circle-jumping 1.5s linear infinite;
+}
+
+@keyframes circle-jumping{
+  0%{width: 60px; height: 40px; transform: translateY(20px);}
+  25%{width: 40px; height: 60px; transform: translateY(-30px);}
+  50%{width: 50px; height: 50px; transform: translateY(-40px);}
+  75%{width: 50px; height: 50px; transform: translateY(20px);}
+  100%{width: 60px; height: 40px; transform: translateY(20px);}
+
+}
